@@ -1,9 +1,16 @@
 const user = document.querySelector(".fa-user ");
+const menu = document.querySelector(".fa-bars ");
 const loginlogout = document.querySelector(".login-logout");
 
 user.addEventListener("click", () => {
 
-  user.classList.toggle("fa-xmark");
+ 
   loginlogout.classList.toggle("active");
 
+});
+
+
+menu.addEventListener("click", () => {
+  menu.classList.toggle("fa-circle-xmark");
+ 
 });

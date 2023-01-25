@@ -1,5 +1,5 @@
 :root {
-  --main-dark:#191970;
+  --main-dark:#242444;
   --main: #4169E1;
   --main-light: #b2f2ec;
   --main-lighter: #ebfbfa;
@@ -34,7 +34,7 @@ html {
 
 .navbar {
   display: flex;
-  padding: .6rem 9%;
+  padding: .6rem 7%;
   align-items: center;
   justify-content: space-between;
   background: var(--main-dark);
@@ -46,13 +46,20 @@ html {
   right: 0;
 }
 
-.navbar .fa-bars {
-  font-size: 2.5rem;
+.navbar span {
+ 
+  font-size: 3.5rem;
+  display: inline-block;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+ 
   display: none;
+
+ 
 }
+
+
+
+
 
 .navbar #menu {
   display: none;
@@ -135,18 +142,202 @@ margin-right: 3rem;
 }
 
 section {
-  padding: 2rem 9%;
+  padding: 2rem 7%;
   background-color: #fff;
-  background: url('../images/image3.webp') no-repeat; 
-  background-size: cover;
-  background-position: right;
-}   
 
-.home{
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
+   min-height: 100vh;
+   text-align: center;
+   padding-top : 10rem ;
 
+
+
+
+} 
+
+section h1{
+  font-size: 2.5rem;
+  color : #555; 
+    margin-bottom: 2rem;
+}
+
+section .container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+  margin: 1rem auto ;
+  justify-content: center;
+  flex-flow: column;
+
+
+}
+
+
+section .container .table-container {
+
+flex: 1 1 ;
+max-width : 80rem
+   
+}
+
+section .container .chart{
+ flex: 1 1 ;
+}
+
+
+section .container{
+  display: flex;
+  width : 100% ;
+  text-align: center;
+
+
+
+}
+
+section .container .box{
+  flex : 1 1 40rem;
+  box-shadow: var(--shadow); 
+
+  border: var(--border); 
+  border-radius: .5rem;
+
+
+
+ 
+
+
+
+}
+
+
+
+section .container .box h3{
+  font-size: 1.5rem;
+  padding-bottom: 1.5rem;
+  color : var(--dark); 
+  background: var(--main-lighter);
+  padding : 2rem ;
+
+
+
+}
+
+.btn{
+  font-size: 1.5rem;
+  display: inline-block;
+  background: var(--main-dark);
+  margin: 1rem ;
+  padding: 1rem;
+  color: #efefef;
+  border-radius: .5rem;
+
+}
+
+section .container .box p{
+  font-size: 1rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+
+}
+
+.btn:hover{
+  background: var(--dark);
+}
+
+
+#orders-table {
+  width: 100%;
+  border: 1px solid #eee;
+  text-align : left;
+  font-size: 1.4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  
+}
+
+#orders-table{
+  border-bottom: none;
+}
+#orders-table tr th{
+ 
+  padding-bottom: 1rem;
+   padding-top: 1rem; 
+   padding-bottom: 1rem; 
+  
+
+}
+
+#orders-table tr{
+  padding-left: 2rem;
+}
+
+#orders-table tr td{
+  padding: 1rem;
+}
+
+#orders-table tr td:hover{
+  background-color: #efefef;
+}
+
+#orders-table tr td.actions{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--main-dark);
+}
+
+#orders-table tr td.actions a{
+    color: var(--main-dark);
+    font-size: 2rem;
+}
+
+#orders-table tr td.actions a:hover{
+  transform: scale(1.05);
+}
+
+#orders-table tr td.actions:hover{
+  background-color: #fff;
+}
+
+
+
+
+
+
+/* tables styling  */
+
+#table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left; 
+  padding-left: 2rem;
+
+}
+
+#table tr{
+ 
+}
+
+#table tr th{
+  text-align: center;
+}
+
+#table td, #table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--dark);
+  color: white;
 }
 
 
@@ -161,8 +352,9 @@ section {
   }
 }
 @media (max-width: 768px) {
-  .navbar .fa-bars {
+   .navbar span {
     display: block;
+    cursor: pointer;
   }
   .navbar .links {
     position: absolute;
@@ -189,4 +381,46 @@ section {
   html {
     font-size: 50%;
   }
+}
+
+
+.data{
+   margin: 0 auto ;
+  margin-bottom: 2rem;
+  text-align: center;
+  
+}
+
+.data .data-container{
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  gap : 4rem ;
+ 
+
+}
+
+.data .data-container .data-box{
+  box-shadow: var(--shadow);
+  border: var(--border);
+  flex : 1 1 20rem; 
+  overflow: hidden;
+  border-radius: .5rem;
+  max-width : 30rem;
+}
+
+.data .data-container .data-box h3{
+  padding:1rem 2rem;
+  background-color: #3273dc;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+
+
+}
+
+.data .data-container .data-box p{
+  padding-bottom : 2rem ; 
+  font-size: 1.5rem;
+  color: #777;
 }

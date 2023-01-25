@@ -1,5 +1,103 @@
 {% extends 'bookstore/main.html'%}
 
 {% block content %}
+<section>
+<h1>orders dashboard </h1>
 
+<div class="data">
+  <div class="data-container">
+    <div class="data-box">
+      <h3 style="background-color : #00d1b2">delivered orders</h3>
+      <p>{{data.delivered_orders}}</p>
+    </div>
+
+
+     <div class="data-box">
+      <h3>orders in progress</h3>
+      
+        <p>{{data.pending_orders}}</p>
+    </div>
+
+
+     <div class="data-box">
+      <h3 style="background-color : #DE3163">out of stock </h3>
+    
+         <p>{{data.out_orders}}</p>
+    </div>
+
+
+     <div class="data-box">
+      <h3 style="background-color : #242444">total orders</h3>
+   
+      <p>{{data.total_orders}}</p>
+    </div>
+
+    
+
+
+  </div>
+</div>
+
+<div class="container">
+    <div class="box">
+         <h3>orders info </h3>
+         <a href="" class="btn">add order</a>
+        <table id="orders-table">
+  <tr>
+    <th>Customer</th>
+    <th>Book</th>
+    <th>Status</th>
+    <th>order date</th>
+    <th>action</th>
+  </tr>
+  {% for order in orders %}
+  <tr>
+    <td>{{order.customer.name}}</td>
+    <td>{{order.book.name}}</td>
+    <td>{{order.status}}</td>
+    <td>{{order.date}}</td>
+    <td class='actions'>
+      <a href=""><i class="fa-solid fa-trash-can"></i></a>
+      <a href=""><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+
+      
+    </td>
+  </tr>
+
+  {% endfor %}
+
+</table>
+    </div>
+
+
+
+
+  <div class="box">
+        <h3>customers info </h3>
+        <a href="" class="btn">add customer</a>
+        <table id="orders-table">
+  <tr>
+    <th>name</th>
+    <th>email</th>
+    <th>age</th>
+  </tr>
+  {% for customer in customers %}
+  <tr>
+    <td>{{customer.name}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.age}}</td>
+  </tr>
+
+  {% endfor %}
+
+</table>
+    </div>
+
+    
+
+   
+
+</div>
+
+</section>
 {% endblock content %}
