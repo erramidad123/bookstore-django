@@ -1,17 +1,22 @@
 <nav class="navbar">
 
     <input type="checkbox" id = "menu">
-    <label for="menu" class="fa-solid fa-bars"></label>
-    <a href="{% url 'home' %}" class="logo">Booky</a>
+    <label for="menu" class="fa-solid fa-bars "></label>
+    <div class="logo-content">
+
+        <i class="fas fa-book"></i>
+        <a href="{% url 'home' %}" class="logo">Booky</a>
+    </div>
+    
     <div class="links">
-        <a href="#">books</a>
-        <a href="#">about</a>
-        <a href="#">customers</a>
+        <a href="{% url 'books'%}">books</a>
+        <a href="{% url 'orders'%}">Orders</a>
+        <a href="{% url 'customers'%}">Customers</a>
     </div>
 
     <div class="icons">
         <div class="icon">
-            <span  class="fas fa-book"></span>
+            <span><i class="fas fa-chart-bar"></i></span>
             
         </div>
          <div class="icon">

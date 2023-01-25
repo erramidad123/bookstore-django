@@ -1,5 +1,10 @@
 {% extends 'bookstore/main.html'%}
 
 {% block content %}
-<h1>welcome to books details  </h1>
+<h1>books list  </h1>
+<ul>
+{% for book in books %}
+<li>{{book.name}}</li>
+{% endfor%}
+</ul>
 {% endblock content %}

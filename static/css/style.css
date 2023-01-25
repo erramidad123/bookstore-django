@@ -1,6 +1,6 @@
 :root {
-  --main-dark: #00a36c;
-  --main: #33b3a6;
+  --main-dark:#191970;
+  --main: #4169E1;
   --main-light: #b2f2ec;
   --main-lighter: #ebfbfa;
   --dark-bg: #191919;
@@ -34,7 +34,7 @@ html {
 
 .navbar {
   display: flex;
-  padding: 1rem 9%;
+  padding: .6rem 9%;
   align-items: center;
   justify-content: space-between;
   background: var(--main-dark);
@@ -64,11 +64,17 @@ html {
   font-weight: bold;
 }
 
+.navbar .fa-book{
+    font-size: 3rem;
+    margin-right: .5rem;
+}
+
 .navbar .links a {
   display: inline-block;
   color: var(--light-grey);
-  font-size: 2.2rem;
+  font-size: 2rem;
   padding: 0 1.8rem;
+  font-weight: lighter;
 }
 
 .navbar .links a:hover {
@@ -97,7 +103,7 @@ html {
 .navbar .icons ul {
   position: absolute;
   background-color: #fff;
-
+margin-right: 3rem;
   padding: 2rem;
   top: 5rem;
   right: -50%;

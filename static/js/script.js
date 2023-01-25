@@ -1,6 +1,9 @@
-const user = document.querySelector('.fa-user '); 
-const loginlogout = document.querySelector('.login-logout') 
+const user = document.querySelector(".fa-user ");
+const loginlogout = document.querySelector(".login-logout");
 
-user.addEventListener('click',()=>{
-    loginlogout.classList.toggle('active')
-})
+user.addEventListener("click", () => {
+
+  user.classList.toggle("fa-xmark");
+  loginlogout.classList.toggle("active");
+
+});
