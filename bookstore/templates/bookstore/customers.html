@@ -1,5 +1,48 @@
 {% extends 'bookstore/main.html'%}
 
 {% block content %}
-<h1>welcome to customers  </h1>
+<section>
+
+    <h1>Customer Info </h1>
+    
+    <div class="customer">
+        <div class="customerbox">
+            <h3>{{customer.name}}</h3>
+
+             <p> email : {{customer.email}}</p>
+             <p> phone : {{customer.phone}}</p>
+
+            <p class='bhr'> total orders : {{t_orders}}</p>
+            
+            <div class="order-detail">
+
+               <h3> orders </h3>
+
+               
+                <div class="books">
+                {% for order in orders %}
+
+                    <div class="box">
+                        <h4>{{order.book.name}}</h4>
+                        <p>${{order.book.price}}</p>
+                        <p>{{order.date}}</p>
+                        <p>{{order.status}}</p>
+                        <p>
+                        <a href=""><i class="fa-solid fa-trash-can"></i></a>
+                        <a href=""><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                        </p>
+                        
+
+                    
+                    </div>
+                    {% endfor %}
+                
+                </div>
+                
+            </div>
+        
+        </div>
+    </div>
+
+</section>
 {% endblock content %}

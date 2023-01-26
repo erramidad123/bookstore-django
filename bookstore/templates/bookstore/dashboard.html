@@ -41,7 +41,7 @@
 <div class="container">
     <div class="box">
          <h3>orders info </h3>
-         <a href="" class="btn">add order</a>
+         <a href="{% url 'create' %}" class="btn">add order</a>
         <table id="orders-table">
   <tr>
     <th>Customer</th>
@@ -80,12 +80,14 @@
     <th>name</th>
     <th>email</th>
     <th>age</th>
+    <th>detail</th>
   </tr>
   {% for customer in customers %}
   <tr>
     <td>{{customer.name}}</td>
     <td>{{customer.email}}</td>
     <td>{{customer.age}}</td>
+    <td><a style="font-size : 2.2rem" href="{% url 'customer' customer.id %}"><i class="fa-solid fa-eye"></i></a></td>
   </tr>
 
   {% endfor %}

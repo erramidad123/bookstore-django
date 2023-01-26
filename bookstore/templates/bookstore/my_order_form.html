@@ -1,0 +1,26 @@
+{% extends 'bookstore/main.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    <h1 class="form title">Order Form </h1>
+<div class="form-container">
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+
+
+    </form>
+
+    <button type = "submit">send </button>
+
+
+</div>
+
+</section>
+
+
+
+{% endblock %}

@@ -1,8 +1,7 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
-
-
+from .my_order_form import OrderForm
 from .models import * 
 
 
@@ -35,10 +34,20 @@ def books(request) :
 
 
 
-def customers(request) :
-    return render(request,'bookstore/customers.html')
+def customer(request,c_id) :
+    customer = Customer.objects.get(id=c_id)
+    orders = customer.order_set.all()
+    t_orders = orders.count() 
+    return render(request,'bookstore/customers.html',{'customer':customer,'orders':orders,'t_orders':t_orders})
 
 def orders(request) :
     return render(request,'bookstore/orders.html')
+
+def create(request) :
+    form = OrderForm()
+    context = { 
+        'form':form
+    }
+    return render(request,'bookstore/my_order_form.html',context) 
 
 

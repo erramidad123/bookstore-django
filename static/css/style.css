@@ -31,7 +31,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
-
+body{
+  padding-bottom: 4rem;
+}
 .navbar {
   display: flex;
   padding: .6rem 7%;
@@ -171,12 +173,17 @@ section .container{
 
 
 }
+section .container{
+  margin: 0 auto ;
+  
+}
 
 
 section .container .table-container {
 
-flex: 1 1 ;
-max-width : 80rem
+flex: 1 1 60rem;
+max-width : 80rem; 
+align-self: center;
    
 }
 
@@ -423,4 +430,135 @@ section .container .box p{
   padding-bottom : 2rem ; 
   font-size: 1.5rem;
   color: #777;
+}
+
+
+
+section .customer{
+  width: 100%;
+
+}
+
+section .customer .customerbox{
+  background-color: #fff;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  border-radius: .5rem;
+  border: var(--border);
+
+
+}
+
+section .customer .customerbox h3{
+  font-size: 2rem;
+  color : var(--main-dark); 
+  margin-bottom: 2rem;
+}
+
+section .customer .customerbox p{
+    font-size: 1.3rem;
+  width: 100%;
+  padding-bottom: 2rem ;
+}
+
+section .customer .customerbox .bhr{
+  font-size: 1.3rem;
+  width: 100%;
+  padding-bottom: 2rem ;
+  border-bottom: .1rem solid rgba(0,0,0,.5);
+
+}
+
+section .customer .customerbox .order-detail{
+
+  margin-top: 1rem;
+  text-align: center;
+}
+section .customer .customerbox .order-detail h3{
+  font-size: 2rem ;
+  padding: 2rem;
+  color: #e30b5c;
+}
+
+
+section .customer .customerbox .order-detail .books{
+  display: flex ;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 0 auto ; 
+}
+section .customer .customerbox .order-detail .books .box {
+  padding : 2rem ; 
+  flex : 1 1 30rem ; 
+
+}
+
+section .customer .customerbox .order-detail .books .box h4, 
+section .customer .customerbox .order-detail .books .box p{
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+section .customer .customerbox .order-detail .books .box p a:first-child{
+  margin-left: 1rem ;
+  color: #e30b5c; 
+  font-size: 2rem;
+}
+
+section .customer .customerbox .order-detail .books .box p a{
+  margin-left: 1rem ;
+  color: #4169E1;
+  font-size: 2rem;
+}
+
+
+section .form-container{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: left;
+  gap: 2rem ;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  border: var(--border);
+  max-width: 60rem;
+  margin: 1rem auto ;
+}
+
+section .form-container p{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex : 1 1 40rem ; 
+  
+
+  border-radius: .5rem;
+  border: var(--border);
+  margin-top: 2rem ;
+  height: 4rem ;
+  padding: 2rem ;
+  font-size: 1.4rem;
+  color: var(--main-dark);
+  font-weight: bold;
+}
+
+
+section .form-container button{
+  padding: 1.5rem ;
+  width: 15rem;
+  
+  background-color: var(--main-dark);
+  border-radius: 5rem;
+  color: #fff;
+  opacity: .85;
+  cursor: pointer;
+
+
+}
+
+
+section .form-container button:hover{
+opacity : 1; 
+
 }
