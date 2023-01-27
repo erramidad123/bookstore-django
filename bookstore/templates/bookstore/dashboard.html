@@ -1,7 +1,12 @@
 {% extends 'bookstore/main.html'%}
-
+{% load static %}
 {% block content %}
 <section>
+{% for  msg in messages %}
+        <div class="message">
+            {{msg }}
+        </div>
+    {% endfor %}
 <h1>orders dashboard </h1>
 
 <div class="data">

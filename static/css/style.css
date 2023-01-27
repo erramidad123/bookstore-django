@@ -34,6 +34,11 @@ html {
 body{
   padding-bottom: 4rem;
 }
+
+body input, 
+body textarea{
+  text-transform: none;
+}
 .navbar {
   display: flex;
   padding: .6rem 7%;
@@ -526,16 +531,26 @@ section .form-container{
   margin: 1rem auto ;
 }
 
+section .form-container form {
+  width: 100%;
+}
+
+
+
+section .form-container span{
+font-size: 1.5rem;
+}
 section .form-container p{
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
+  
   cursor: pointer;
   width: 100%;
   border-radius: .5rem;
   border: var(--border);
-  margin-top: 2rem ;
+  margin-top : .8rem;
+  margin-bottom : 1rem ; 
   height: 4rem ;
   padding: 2rem ;
   font-size: 1.4rem;
@@ -554,7 +569,7 @@ section .form-container button{
     display: block;
   margin-top: 2rem;
   text-align: center;
-  padding: 1.5rem ;
+  padding: 1.2rem ;
   width: 15rem;
   margin : 1rem auto ; 
 
@@ -563,7 +578,7 @@ section .form-container button{
   color: #fff;
   opacity: .85;
   cursor: pointer;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 
 
 }
@@ -572,10 +587,10 @@ section .form-container .cancel{
     display: block;
   margin-top: 2rem;
   text-align: center;
-  padding: 1.5rem ;
+  padding: 1.2rem ;
   width: 15rem;
   margin : 1rem auto ; 
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   background-color: var(--main-dark);
   border-radius: 5rem;
   color: #fff;
@@ -634,4 +649,16 @@ section .search form button{
 section .search form button i {
   font-size: 2.6rem ;
  cursor: pointer;
+}
+
+.message{
+  color: #43b78b;
+  padding: 2rem ;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 auto ;
+}
+
+.message.hide{
+  display: none;
 }

@@ -2,12 +2,12 @@ from django.shortcuts import render,redirect
 
 
 from django.http import HttpResponse
-from .my_order_form import OrderForm
+from .forms import OrderForm,CreateNewUser
 from .models import * 
 from .filters import OrderFilter
-
-
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages 
+from django.contrib.auth import authenticate, login , logout 
 def home(request) : 
     orders = Order.objects.all() 
     customers = Customer.objects.all() 
@@ -80,6 +80,7 @@ def update(request,order_id) :
         form = OrderForm(request.POST,instance=order)
         if form.is_valid() :
             form.save() 
+        
 
             return redirect('home')
 
@@ -96,3 +97,37 @@ def delete(request,order_id) :
         order.delete() 
         return redirect('home')
     return render(request, 'bookstore/delete_form.html')
+
+
+
+def userLogin(request) :
+    if request.method == 'POST' :
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request,username=username, password=password)
+        if user is not None:
+            login(request,user)
+            messages.success(request,' Welcome ' + user.username)
+            return redirect('home')
+        else : 
+            messages.info(request,'Credentials not valid ')
+    context = {}
+    return render(request,'bookstore/login.html', context )
+
+def register(request) :
+    form = UserCreationForm() 
+    if request.method == 'POST' :
+
+        form = CreateNewUser(request.POST) 
+        if form.is_valid() : 
+            form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, user + ' account created successfully ')
+            return redirect('login')
+
+
+    context = {'form':form}
+    return render(request,'bookstore/register.html', context )
+      
+
+    

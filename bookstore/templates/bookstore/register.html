@@ -1,0 +1,45 @@
+{% extends 'bookstore/main.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    <h1 class="form title"> Create an Account  </h1>
+<div class="form-container">
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for=""> 
+            <span>username</span>
+            <p>{{form.username}}</p>
+         </label>
+
+
+          <label for=""> 
+            <span>password</span>
+            <p>{{form.password1}}</p>
+         </label>
+
+          <label for=""> 
+            <span>confirm password</span>
+            <p>{{form.password2}}</p>
+         </label>
+       
+
+      <div class="del" style="display : flex; gap : 2rem ">
+        <button class="delete-btn" type = "submit">register </button>
+        <a class="cancel" href="{% url 'login' %}">login</a>
+    </div>
+    
+
+    </form>
+
+
+
+
+</div>
+
+</section>
+
+
+
+{% endblock %}

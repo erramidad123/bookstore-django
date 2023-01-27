@@ -11,7 +11,8 @@ urlpatterns = [
     path('create/',views.create,name = 'create'),
     path('update/<int:order_id>',views.update,name = 'update'),
     path('delete/<int:order_id>',views.delete,name = 'delete'),
-
+    path('login/',views.userLogin,name='login'),
+    path('register/',views.register,name = 'register'),
 ]
 
 

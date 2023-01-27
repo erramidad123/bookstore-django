@@ -1,0 +1,44 @@
+{% extends 'bookstore/main.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    
+    <h1 class="form title"> Login </h1>
+<div class="form-container">
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for=""> 
+            <span>username</span>
+            <p><input type="text" name="username"></p>
+         </label>
+
+          <label for=""> 
+            <span>password</span>
+            <p><input type="password" name="password"></p>
+         </label>
+
+       
+
+    <button type = "submit"> login   </button>
+
+    </form>
+
+
+
+
+</div>
+
+{% for  msg in messages %}
+        <div class="message">
+            {{msg }}
+         
+        </div>
+    {% endfor %}
+
+</section>
+
+
+
+{% endblock %}

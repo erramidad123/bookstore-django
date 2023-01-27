@@ -14,3 +14,13 @@ menu.addEventListener("click", () => {
   menu.classList.toggle("fa-circle-xmark");
  
 });
+
+
+const message = document.querySelector('.message')
+
+window.onload = () => {
+  setTimeout(() => {
+    message.setAttribute("style", "display:none");
+    console.log("welcome sara ");
+  }, 3000);
+}
