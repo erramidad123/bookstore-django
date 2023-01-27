@@ -1,0 +1,25 @@
+{% extends 'bookstore/main.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+   
+<div class="form-container">
+
+    <form method="POST">
+     {% csrf_token %}
+        <h1>are you sure ? </h1>
+    <div class="del" style="display : flex; gap : 2rem ">
+        <button class="delete-btn" type = "submit">confirm </button>
+        <a class="cancel" href="{% url 'home' %}">cancel</a>
+    </div>
+    
+
+    </form>
+</div>
+
+</section>
+
+
+
+{% endblock %}

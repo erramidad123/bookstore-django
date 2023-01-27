@@ -530,9 +530,9 @@ section .form-container p{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex : 1 1 40rem ; 
-  
-
+ 
+  cursor: pointer;
+  width: 100%;
   border-radius: .5rem;
   border: var(--border);
   margin-top: 2rem ;
@@ -541,13 +541,41 @@ section .form-container p{
   font-size: 1.4rem;
   color: var(--main-dark);
   font-weight: bold;
+
+}
+
+section .form-container p select{
+  text-align: center;
+  overflow: hidden;
 }
 
 
 section .form-container button{
+    display: block;
+  margin-top: 2rem;
+  text-align: center;
   padding: 1.5rem ;
   width: 15rem;
-  
+  margin : 1rem auto ; 
+
+  background-color: var(--main-dark);
+  border-radius: 5rem;
+  color: #fff;
+  opacity: .85;
+  cursor: pointer;
+  font-size: 1.7rem;
+
+
+}
+
+section .form-container .cancel{
+    display: block;
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1.5rem ;
+  width: 15rem;
+  margin : 1rem auto ; 
+  font-size: 1.7rem;
   background-color: var(--main-dark);
   border-radius: 5rem;
   color: #fff;
@@ -557,8 +585,16 @@ section .form-container button{
 
 }
 
+section .form-container .cancel:hover{
+  background: #00d1b2;
+}
+
 
 section .form-container button:hover{
 opacity : 1; 
 
+}
+
+section .form-container button.delete-btn:hover{
+  background: #ff3860;
 }

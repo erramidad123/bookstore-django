@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+
 
 from django.http import HttpResponse
 from .my_order_form import OrderForm
@@ -44,10 +45,49 @@ def orders(request) :
     return render(request,'bookstore/orders.html')
 
 def create(request) :
+
     form = OrderForm()
+
+    if request.method == 'POST' :
+        print(request.POST)
+        form = OrderForm(request.POST)
+        if form.is_valid() : 
+            form.save()
+            return redirect('home')
+    
+    
+    
+    
     context = { 
         'form':form
     }
     return render(request,'bookstore/my_order_form.html',context) 
 
 
+
+
+
+def update(request,order_id) :
+    order = Order.objects.get(id=order_id)
+    form = OrderForm(instance=order)
+
+    if request.method == 'POST' :
+        form = OrderForm(request.POST,instance=order)
+        if form.is_valid() :
+            form.save() 
+
+            return redirect('home')
+
+    context = { 
+        'form':form
+    }
+    return render(request,'bookstore/order_update.html',context) 
+
+
+
+def delete(request,order_id) : 
+    order = Order.objects.get(id = order_id)
+    if request.method == 'POST' : 
+        order.delete() 
+        return redirect('home')
+    return render(request, 'bookstore/delete_form.html')
