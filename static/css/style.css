@@ -598,3 +598,40 @@ opacity : 1;
 section .form-container button.delete-btn:hover{
   background: #ff3860;
 }
+
+
+section .search {
+   margin: 2rem ; 
+  text-align: center;
+}
+
+section .search form{
+  height: 5rem ;
+  display: flex;
+  align-items: center;
+  margin : 2rem auto ; 
+  border: var(--border);
+  border-radius: .5rem;
+  padding: 0 1rem ;
+  padding-left: 2rem;
+
+  gap: 2rem;
+}
+
+section .search form input{
+  width: 100%;
+  font-size: 1.7rem;
+}
+
+section .search form  label{
+display: none;
+}
+
+section .search form button{
+  background: #fff;
+}
+
+section .search form button i {
+  font-size: 2.6rem ;
+ cursor: pointer;
+}

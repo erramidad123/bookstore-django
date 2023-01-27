@@ -4,6 +4,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .my_order_form import OrderForm
 from .models import * 
+from .filters import OrderFilter
 
 
 
@@ -38,8 +39,12 @@ def books(request) :
 def customer(request,c_id) :
     customer = Customer.objects.get(id=c_id)
     orders = customer.order_set.all()
+
+    searchFilter = OrderFilter(request.GET,queryset=orders) 
+    orders = searchFilter.qs
+
     t_orders = orders.count() 
-    return render(request,'bookstore/customers.html',{'customer':customer,'orders':orders,'t_orders':t_orders})
+    return render(request,'bookstore/customers.html',{'customer':customer,'orders':orders,'t_orders':t_orders,'searchFilter':searchFilter})
 
 def orders(request) :
     return render(request,'bookstore/orders.html')
