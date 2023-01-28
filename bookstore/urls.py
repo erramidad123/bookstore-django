@@ -13,6 +13,8 @@ urlpatterns = [
     path('delete/<int:order_id>',views.delete,name = 'delete'),
     path('login/',views.userLogin,name='login'),
     path('register/',views.register,name = 'register'),
+    path('user/',views.userProfile,name = 'user_profile'),
+
 ]
 
 

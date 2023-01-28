@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 
-
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .forms import OrderForm,CreateNewUser
 from .models import * 
@@ -8,6 +8,11 @@ from .filters import OrderFilter
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages 
 from django.contrib.auth import authenticate, login , logout 
+from .decorators import notLoggedUser
+
+
+
+@login_required(login_url='login')
 def home(request) : 
     orders = Order.objects.all() 
     customers = Customer.objects.all() 
@@ -28,7 +33,7 @@ def home(request) :
 
     return render(request,'bookstore/dashboard.html',{'orders':orders,'customers':customers,'data':data})
 
-
+@login_required(login_url='login')
 def books(request) :
     books = Book.objects.all() 
 
@@ -45,10 +50,10 @@ def customer(request,c_id) :
 
     t_orders = orders.count() 
     return render(request,'bookstore/customers.html',{'customer':customer,'orders':orders,'t_orders':t_orders,'searchFilter':searchFilter})
-
+@login_required(login_url='login')
 def orders(request) :
     return render(request,'bookstore/orders.html')
-
+@login_required(login_url='login')
 def create(request) :
 
     form = OrderForm()
@@ -71,7 +76,7 @@ def create(request) :
 
 
 
-
+@login_required(login_url='login')
 def update(request,order_id) :
     order = Order.objects.get(id=order_id)
     form = OrderForm(instance=order)
@@ -90,7 +95,7 @@ def update(request,order_id) :
     return render(request,'bookstore/order_update.html',context) 
 
 
-
+@login_required(login_url='login')
 def delete(request,order_id) : 
     order = Order.objects.get(id = order_id)
     if request.method == 'POST' : 
@@ -101,6 +106,8 @@ def delete(request,order_id) :
 
 
 def userLogin(request) :
+    if request.user.is_authenticated : 
+        return redirect('home')
     if request.method == 'POST' :
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -130,4 +137,5 @@ def register(request) :
     return render(request,'bookstore/register.html', context )
       
 
-    
+def userProfile(request) : 
+    return render(request,'bookstore/userProfile.html')
