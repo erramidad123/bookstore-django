@@ -11,8 +11,15 @@
     <div class="links">
         <a href="{% url 'books'%}">books</a>
         <a href="{% url 'orders'%}">Orders</a>
+     </div>
+    {% else %}
+     <div class="links">
+        
+        <a href="{% url 'user_profile'%}">Profile</a>
+   
+     </div>
     {% endif %}
-    </div>
+   
 
     <div class="icons">
         <div class="icon">

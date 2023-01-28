@@ -149,6 +149,10 @@ def register(request) :
     context = {'form':form}
     return render(request,'bookstore/register.html', context )
       
-
+@login_required(login_url='login')
+@allowedUsers(allowedUsers=['customer'])
 def userProfile(request) : 
-    return render(request,'bookstore/userProfile.html')
+    orders = request.user.customer.order_set.all() 
+    context = {'orders': orders}
+   
+    return render(request,'bookstore/profile.html',context)

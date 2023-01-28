@@ -1,6 +1,6 @@
 :root {
-  --main-dark:#242444;
-  --main: #4169E1;
+  --main-dark: #242444;
+  --main: #4169e1;
   --main-light: #b2f2ec;
   --main-lighter: #ebfbfa;
   --dark-bg: #191919;
@@ -31,17 +31,17 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
-body{
+body {
   padding-bottom: 4rem;
 }
 
-body input, 
-body textarea{
+body input,
+body textarea {
   text-transform: none;
 }
 .navbar {
   display: flex;
-  padding: .6rem 7%;
+  padding: 0.6rem 7%;
   align-items: center;
   justify-content: space-between;
   background: var(--main-dark);
@@ -54,19 +54,12 @@ body textarea{
 }
 
 .navbar span {
- 
   font-size: 3.5rem;
   display: inline-block;
   cursor: pointer;
- 
+
   display: none;
-
- 
 }
-
-
-
-
 
 .navbar #menu {
   display: none;
@@ -78,9 +71,9 @@ body textarea{
   font-weight: bold;
 }
 
-.navbar .fa-book{
-    font-size: 3rem;
-    margin-right: .5rem;
+.navbar .fa-book {
+  font-size: 3rem;
+  margin-right: 0.5rem;
 }
 
 .navbar .links a {
@@ -117,7 +110,7 @@ body textarea{
 .navbar .icons ul {
   position: absolute;
   background-color: #fff;
-margin-right: 3rem;
+  margin-right: 3rem;
   padding: 2rem;
   top: 5rem;
   right: -50%;
@@ -152,169 +145,131 @@ section {
   padding: 2rem 7%;
   background-color: #fff;
 
-   min-height: 100vh;
-   text-align: center;
-   padding-top : 10rem ;
-
-
-
-
-} 
-
-section h1{
-  font-size: 2.5rem;
-  color : #555; 
-    margin-bottom: 2rem;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 10rem;
 }
 
-section .container{
+section h1 {
+  font-size: 2.5rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+section .container {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
   width: 100%;
-  margin: 1rem auto ;
+  margin: 1rem auto;
   justify-content: center;
   flex-flow: column;
-
-
 }
-section .container{
-  margin: 0 auto ;
-  
+section .container {
+  margin: 0 auto;
 }
-
 
 section .container .table-container {
-
-flex: 1 1 60rem;
-max-width : 80rem; 
-align-self: center;
-   
+  flex: 1 1 60rem;
+  max-width: 80rem;
+  align-self: center;
 }
 
-section .container .chart{
- flex: 1 1 ;
+section .container .chart {
+  flex: 1 1;
 }
 
-
-section .container{
+section .container {
   display: flex;
-  width : 100% ;
+  width: 100%;
   text-align: center;
-
-
-
 }
 
-section .container .box{
-  flex : 1 1 40rem;
-  box-shadow: var(--shadow); 
+section .container .box {
+  flex: 1 1 40rem;
+  box-shadow: var(--shadow);
 
-  border: var(--border); 
-  border-radius: .5rem;
-
-
-
- 
-
-
-
+  border: var(--border);
+  border-radius: 0.5rem;
 }
 
-
-
-section .container .box h3{
+section .container .box h3 {
   font-size: 1.5rem;
   padding-bottom: 1.5rem;
-  color : var(--dark); 
+  color: var(--dark);
   background: var(--main-lighter);
-  padding : 2rem ;
-
-
-
+  padding: 2rem;
 }
 
-.btn{
+.btn {
   font-size: 1.5rem;
   display: inline-block;
   background: var(--main-dark);
-  margin: 1rem ;
+  margin: 1rem;
   padding: 1rem;
   color: #efefef;
-  border-radius: .5rem;
-
+  border-radius: 0.5rem;
 }
 
-section .container .box p{
+section .container .box p {
   font-size: 1rem;
   padding: 1rem;
   font-size: 1.1rem;
-
 }
 
-.btn:hover{
+.btn:hover {
   background: var(--dark);
 }
-
 
 #orders-table {
   width: 100%;
   border: 1px solid #eee;
-  text-align : left;
+  text-align: left;
   font-size: 1.4rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  
 }
 
-#orders-table{
+#orders-table {
   border-bottom: none;
 }
-#orders-table tr th{
- 
+#orders-table tr th {
   padding-bottom: 1rem;
-   padding-top: 1rem; 
-   padding-bottom: 1rem; 
-  
-
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-#orders-table tr{
+#orders-table tr {
   padding-left: 2rem;
 }
 
-#orders-table tr td{
+#orders-table tr td {
   padding: 1rem;
 }
 
-#orders-table tr td:hover{
+#orders-table tr td:hover {
   background-color: #efefef;
 }
 
-#orders-table tr td.actions{
+#orders-table tr td.actions {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   color: var(--main-dark);
 }
 
-#orders-table tr td.actions a{
-    color: var(--main-dark);
-    font-size: 2rem;
+#orders-table tr td.actions a {
+  color: var(--main-dark);
+  font-size: 2rem;
 }
 
-#orders-table tr td.actions a:hover{
+#orders-table tr td.actions a:hover {
   transform: scale(1.05);
 }
 
-#orders-table tr td.actions:hover{
+#orders-table tr td.actions:hover {
   background-color: #fff;
 }
-
-
-
-
-
 
 /* tables styling  */
 
@@ -322,27 +277,30 @@ section .container .box p{
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  text-align: left; 
+  text-align: left;
   padding-left: 2rem;
-
 }
 
-#table tr{
- 
+#table tr {
 }
 
-#table tr th{
+#table tr th {
   text-align: center;
 }
 
-#table td, #table th {
+#table td,
+#table th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#table tr:nth-child(even){background-color: #f2f2f2;}
+#table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-#table tr:hover {background-color: #ddd;}
+#table tr:hover {
+  background-color: #ddd;
+}
 
 #table th {
   padding-top: 12px;
@@ -351,8 +309,6 @@ section .container .box p{
   background-color: var(--dark);
   color: white;
 }
-
-
 
 @media (max-width: 991px) {
   html {
@@ -364,7 +320,7 @@ section .container .box p{
   }
 }
 @media (max-width: 768px) {
-   .navbar span {
+  .navbar span {
     display: block;
     cursor: pointer;
   }
@@ -395,270 +351,271 @@ section .container .box p{
   }
 }
 
-
-.data{
-   margin: 0 auto ;
+.data {
+  margin: 0 auto;
   margin-bottom: 2rem;
   text-align: center;
-  
 }
 
-.data .data-container{
+.data .data-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   flex-wrap: wrap;
-  gap : 4rem ;
- 
-
+  gap: 4rem;
 }
 
-.data .data-container .data-box{
+.data .data-container .data-box {
   box-shadow: var(--shadow);
   border: var(--border);
-  flex : 1 1 20rem; 
+  flex: 1 1 20rem;
   overflow: hidden;
-  border-radius: .5rem;
-  max-width : 30rem;
+  border-radius: 0.5rem;
+  max-width: 30rem;
 }
 
-.data .data-container .data-box h3{
-  padding:1rem 2rem;
+.data .data-container .data-box h3 {
+  padding: 1rem 2rem;
   background-color: #3273dc;
   color: #fff;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-
-
 }
 
-.data .data-container .data-box p{
-  padding-bottom : 2rem ; 
+.data .data-container .data-box p {
+  padding-bottom: 2rem;
   font-size: 1.5rem;
   color: #777;
 }
 
-
-
-section .customer{
+section .customer {
   width: 100%;
-
 }
 
-section .customer .customerbox{
+section .customer .customerbox {
   background-color: #fff;
   box-shadow: var(--shadow);
   padding: 2rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: var(--border);
-
-
 }
 
-section .customer .customerbox h3{
+section .customer .customerbox h3 {
   font-size: 2rem;
-  color : var(--main-dark); 
+  color: var(--main-dark);
   margin-bottom: 2rem;
 }
 
-section .customer .customerbox p{
-    font-size: 1.3rem;
-  width: 100%;
-  padding-bottom: 2rem ;
-}
-
-section .customer .customerbox .bhr{
+section .customer .customerbox p {
   font-size: 1.3rem;
   width: 100%;
-  padding-bottom: 2rem ;
-  border-bottom: .1rem solid rgba(0,0,0,.5);
-
+  padding-bottom: 2rem;
 }
 
-section .customer .customerbox .order-detail{
+section .customer .customerbox .bhr {
+  font-size: 1.3rem;
+  width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
+}
 
+section .customer .customerbox .order-detail {
   margin-top: 1rem;
   text-align: center;
 }
-section .customer .customerbox .order-detail h3{
-  font-size: 2rem ;
+section .customer .customerbox .order-detail h3 {
+  font-size: 2rem;
   padding: 2rem;
   color: #e30b5c;
 }
 
-
-section .customer .customerbox .order-detail .books{
-  display: flex ;
+section .customer .customerbox .order-detail .books {
+  display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin: 0 auto ; 
+  margin: 0 auto;
 }
 section .customer .customerbox .order-detail .books .box {
-  padding : 2rem ; 
-  flex : 1 1 30rem ; 
-
+  padding: 2rem;
+  flex: 1 1 30rem;
 }
 
-section .customer .customerbox .order-detail .books .box h4, 
-section .customer .customerbox .order-detail .books .box p{
+section .customer .customerbox .order-detail .books .box h4,
+section .customer .customerbox .order-detail .books .box p {
   font-size: 1.4rem;
   padding: 1rem;
 }
 
-section .customer .customerbox .order-detail .books .box p a:first-child{
-  margin-left: 1rem ;
-  color: #e30b5c; 
+section .customer .customerbox .order-detail .books .box p a:first-child {
+  margin-left: 1rem;
+  color: #e30b5c;
   font-size: 2rem;
 }
 
-section .customer .customerbox .order-detail .books .box p a{
-  margin-left: 1rem ;
-  color: #4169E1;
+section .customer .customerbox .order-detail .books .box p a {
+  margin-left: 1rem;
+  color: #4169e1;
   font-size: 2rem;
 }
 
-
-section .form-container{
+section .form-container {
   display: flex;
   flex-flow: column;
   align-items: center;
   text-align: left;
-  gap: 2rem ;
+  gap: 2rem;
   box-shadow: var(--shadow);
   padding: 2rem;
   border: var(--border);
   max-width: 60rem;
-  margin: 1rem auto ;
+  margin: 1rem auto;
 }
 
 section .form-container form {
   width: 100%;
 }
 
-
-
-section .form-container span{
-font-size: 1.5rem;
+section .form-container span {
+  font-size: 1.5rem;
 }
-section .form-container p{
+section .form-container p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   cursor: pointer;
   width: 100%;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: var(--border);
-  margin-top : .8rem;
-  margin-bottom : 1rem ; 
-  height: 4rem ;
-  padding: 2rem ;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  height: 4rem;
+  padding: 2rem;
   font-size: 1.4rem;
   color: var(--main-dark);
   font-weight: bold;
-
 }
 
-section .form-container p select{
+section .form-container p select {
   text-align: center;
   overflow: hidden;
 }
 
-
-section .form-container button{
-    display: block;
+section .form-container button {
+  display: block;
   margin-top: 2rem;
   text-align: center;
-  padding: 1.2rem ;
+  padding: 1.2rem;
   width: 15rem;
-  margin : 1rem auto ; 
+  margin: 1rem auto;
 
   background-color: var(--main-dark);
   border-radius: 5rem;
   color: #fff;
-  opacity: .85;
+  opacity: 0.85;
   cursor: pointer;
   font-size: 1.5rem;
-
-
 }
 
-section .form-container .cancel{
-    display: block;
+section .form-container .cancel {
+  display: block;
   margin-top: 2rem;
   text-align: center;
-  padding: 1.2rem ;
+  padding: 1.2rem;
   width: 15rem;
-  margin : 1rem auto ; 
+  margin: 1rem auto;
   font-size: 1.5rem;
   background-color: var(--main-dark);
   border-radius: 5rem;
   color: #fff;
-  opacity: .85;
+  opacity: 0.85;
   cursor: pointer;
-
-
 }
 
-section .form-container .cancel:hover{
+section .form-container .cancel:hover {
   background: #00d1b2;
 }
 
-
-section .form-container button:hover{
-opacity : 1; 
-
+section .form-container button:hover {
+  opacity: 1;
 }
 
-section .form-container button.delete-btn:hover{
+section .form-container button.delete-btn:hover {
   background: #ff3860;
 }
 
-
 section .search {
-   margin: 2rem ; 
+  margin: 2rem;
   text-align: center;
 }
 
-section .search form{
-  height: 5rem ;
+section .search form {
+  height: 5rem;
   display: flex;
   align-items: center;
-  margin : 2rem auto ; 
+  margin: 2rem auto;
   border: var(--border);
-  border-radius: .5rem;
-  padding: 0 1rem ;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
   padding-left: 2rem;
 
   gap: 2rem;
 }
 
-section .search form input{
+section .search form input {
   width: 100%;
   font-size: 1.7rem;
 }
 
-section .search form  label{
-display: none;
+section .search form label {
+  display: none;
 }
 
-section .search form button{
+section .search form button {
   background: #fff;
 }
 
 section .search form button i {
-  font-size: 2.6rem ;
- cursor: pointer;
+  font-size: 2.6rem;
+  cursor: pointer;
 }
 
-.message{
+.message {
   color: #43b78b;
-  padding: 2rem ;
+  padding: 2rem;
   font-size: 1.5rem;
   text-align: center;
-  margin: 0 auto ;
+  margin: 0 auto;
 }
 
-.message.hide{
+.message.hide {
   display: none;
+}
+
+section .table-container #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+section .table-container #customers td,
+section .table-container #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+section .table-container #customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+section .table-container #customers tr:hover {
+  background-color: #ddd;
+}
+
+section .table-container #customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
 }
