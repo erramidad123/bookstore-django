@@ -12,6 +12,7 @@ urlpatterns = [
     path('update/<int:order_id>',views.update,name = 'update'),
     path('delete/<int:order_id>',views.delete,name = 'delete'),
     path('login/',views.userLogin,name='login'),
+    path('logout/',views.userLogout,name='logout'),
     path('register/',views.register,name = 'register'),
     path('user/',views.userProfile,name = 'user_profile'),
 

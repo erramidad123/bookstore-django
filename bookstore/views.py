@@ -8,11 +8,12 @@ from .filters import OrderFilter
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages 
 from django.contrib.auth import authenticate, login , logout 
-from .decorators import notLoggedUser
-
-
+from .decorators import notLoggedUser, allowedUsers,forAdmins
+from django.contrib.auth.models import Group
 
 @login_required(login_url='login')
+# @allowedUsers(allowedUsers=['admin'])
+@forAdmins
 def home(request) : 
     orders = Order.objects.all() 
     customers = Customer.objects.all() 
@@ -40,7 +41,7 @@ def books(request) :
     return render(request,'bookstore/books.html',{'books':books})
 
 
-
+@login_required(login_url='login')
 def customer(request,c_id) :
     customer = Customer.objects.get(id=c_id)
     orders = customer.order_set.all()
@@ -77,6 +78,7 @@ def create(request) :
 
 
 @login_required(login_url='login')
+@allowedUsers(allowedUsers=['admin'])
 def update(request,order_id) :
     order = Order.objects.get(id=order_id)
     form = OrderForm(instance=order)
@@ -96,6 +98,7 @@ def update(request,order_id) :
 
 
 @login_required(login_url='login')
+@allowedUsers(allowedUsers=['admin'])
 def delete(request,order_id) : 
     order = Order.objects.get(id = order_id)
     if request.method == 'POST' : 
@@ -104,7 +107,7 @@ def delete(request,order_id) :
     return render(request, 'bookstore/delete_form.html')
 
 
-
+@notLoggedUser
 def userLogin(request) :
     if request.user.is_authenticated : 
         return redirect('home')
@@ -121,18 +124,28 @@ def userLogin(request) :
     context = {}
     return render(request,'bookstore/login.html', context )
 
+def userLogout(request) : 
+    logout(request) 
+    return redirect('login')
+
+
+
+
+
+
+
+@notLoggedUser
 def register(request) :
     form = UserCreationForm() 
     if request.method == 'POST' :
-
         form = CreateNewUser(request.POST) 
         if form.is_valid() : 
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, user + ' account created successfully ')
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            group = Group.objects.get(name="customer")
+            user.groups.add(group) 
+            messages.success(request, username + ' account created successfully ')
             return redirect('login')
-
-
     context = {'form':form}
     return render(request,'bookstore/register.html', context )
       

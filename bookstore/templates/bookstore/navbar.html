@@ -7,11 +7,11 @@
         <i class="fas fa-book"></i>
         <a href="{% url 'home' %}" class="logo">Booky</a>
     </div>
-    
+    {% if request.user.is_staff%}
     <div class="links">
         <a href="{% url 'books'%}">books</a>
         <a href="{% url 'orders'%}">Orders</a>
-     
+    {% endif %}
     </div>
 
     <div class="icons">
@@ -20,12 +20,15 @@
             
         </div>
          <div class="icon">
+         
             <span class="fas fa-user"></span>
             <ul class="login-logout">
-                
+                {% if request.user.is_authenticated %}
+                 <li><a href="{% url 'logout' %}">logout</a></li>
+                 {% else %}
                 <li><a href="{% url 'login' %}">login</a></li>
-                <li><a href="#">logout</a></li>
                 <li><a href="{% url 'register' %}">register</a></li>
+                {% endif %}
             </ul>
          </div>
         
