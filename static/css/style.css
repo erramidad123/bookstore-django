@@ -169,7 +169,7 @@ section .container {
   margin: 0 auto;
 }
 
-section .container .table-container {
+section .container #table-container {
   flex: 1 1 60rem;
   max-width: 80rem;
   align-self: center;
@@ -592,30 +592,36 @@ section .search form button i {
   display: none;
 }
 
-section .table-container #customers {
+section #table-container {
+  max-width: 768px ;
+  text-align: center;
+  margin : 1rem auto ; 
+}
+
+section #table-container #customers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-section .table-container #customers td,
-section .table-container #customers th {
+section #table-container #customers td,
+section #table-container #customers th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-section .table-container #customers tr:nth-child(even) {
+section #table-container #customers tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-section .table-container #customers tr:hover {
+section #table-container #customers tr:hover {
   background-color: #ddd;
 }
 
-section .table-container #customers th {
+section #table-container #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04aa6d;
+  background-color: var(--main-dark);
   color: white;
 }
