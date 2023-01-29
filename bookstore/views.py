@@ -165,11 +165,5 @@ def profile_detail(request) :
         form = CustomerForm(request.POST,request.FILES,instance = customer)
         if form.is_valid() : 
             form.save() 
-            
-        
-
-    
     context = {'customer':customer,'form':form} 
-
-
     return render(request,'bookstore/profile_detail.html',context)
