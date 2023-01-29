@@ -467,7 +467,7 @@ section .form-container {
   box-shadow: var(--shadow);
   padding: 2rem;
   border: var(--border);
-  max-width: 60rem;
+  max-width: 80rem;
   margin: 1rem auto;
 }
 
@@ -625,3 +625,62 @@ section #table-container #customers th {
   background-color: var(--main-dark);
   color: white;
 }
+
+
+.card-container{
+width   : 80rem;
+margin: 0 auto ; 
+}
+
+.card-container .card{
+  background-color: #fff;
+  padding : 2rem ; 
+  box-shadow: var(--shadow);
+  border: var(--border);
+  text-align: center;
+  margin : 1rem 0 ; 
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+}
+.card-container .card .img-container{
+  overflow: hidden;
+  width: 30rem;
+  text-align: center;
+  border-right: var(--border);
+
+} 
+
+.card-container .card .img-container img{
+  width : 100% ;
+
+}
+
+.card-container .card .content{
+  text-align: left;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.card-container .card .content h5{
+  font-size: 2.5rem;
+ 
+}
+
+
+.card-container .card .content p{
+
+  font-size: 1.8rem;
+
+}
+
+.card-container .card .content a{
+  width: 8rem;
+  display: block;
+  text-align: center;
+}
+

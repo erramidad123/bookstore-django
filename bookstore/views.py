@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from .forms import OrderForm,CreateNewUser
+from .forms import OrderForm,CreateNewUser,CustomerForm
 from .models import * 
 from .filters import OrderFilter
 from django.contrib.auth.forms import UserCreationForm
@@ -154,5 +154,22 @@ def register(request) :
 def userProfile(request) : 
     orders = request.user.customer.order_set.all() 
     context = {'orders': orders}
-   
     return render(request,'bookstore/profile.html',context)
+
+@login_required(login_url = 'login')
+@allowedUsers(allowedUsers=['customer'])
+def profile_detail(request) : 
+    customer = request.user.customer
+    form = CustomerForm(instance=customer)
+    if request.method == 'POST' :
+        form = CustomerForm(request.POST,request.FILES,instance = customer)
+        if form.is_valid() : 
+            form.save() 
+            
+        
+
+    
+    context = {'customer':customer,'form':form} 
+
+
+    return render(request,'bookstore/profile_detail.html',context)

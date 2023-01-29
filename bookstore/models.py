@@ -7,7 +7,7 @@ class Customer(models.Model) :
     phone = models.CharField(max_length=100, null= True)
     age = models.CharField(max_length=100, null= True)
     date = models.DateField(auto_now_add=True, null= True)
-    
+    avatar = models.ImageField(blank="True",null=True)
     def __str__(self) :
         return self.name 
 
